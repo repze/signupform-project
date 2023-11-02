@@ -20,6 +20,7 @@
     color: var(--black);
 }
 
+/* Whole registration div */
 .main{
     display: flex;
     flex-flow: row wrap;
@@ -27,6 +28,7 @@
     width: 100vw;
 }
 
+/* Image, logo, title left-side */
 .imageContainer{
     background-image: url(pirateship.png);
     background-repeat: no-repeat;
@@ -64,7 +66,7 @@
 }
 
 
-/* register right-side */
+/* registration right-side */
 .registerContainer{
     /* right side div set to 55% viewport width */
     width: 55vw;
