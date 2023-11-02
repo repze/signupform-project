@@ -1,6 +1,5 @@
 :root{
     --orange: rgb(228,60,31);
-    --orangeTransparent: rgba(228,60,31, 0.4);
     --yellow: rgb(252,181,63);
     --black: rgb(0,0,0);
     --white: rgb(244,244,244);
@@ -121,7 +120,7 @@ form{
                     border: 2px solid var(--whiteTransparent);
                     border-bottom: 2px solid var(--yellow);
                 }
-                &:focus, :focus-visible{
+                &:focus, &:focus-visible{
                     outline: none;
                 }
             }
