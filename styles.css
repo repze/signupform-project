@@ -1,0 +1,181 @@
+:root{
+    --orange: rgb(228,60,31);
+    --orangeTransparent: rgba(228,60,31, 0.4);
+    --yellow: rgb(252,181,63);
+    --black: rgb(0,0,0);
+    --white: rgb(244,244,244);
+    --whiteTransparent: rgba(244, 244, 244, 0);
+    --whiteOpac: rgba(244, 244, 244, 0.8);
+}
+
+@font-face {
+    font-family: designerFont;
+    src: url(DESIGNER.otf);
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    color: var(--black);
+}
+
+.main{
+    display: flex;
+    flex-flow: row wrap;
+    height: 100vh;
+    width: 100vw;
+}
+
+.imageContainer{
+    background-image: url(pirateship.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: auto;
+    /* left side div set to 45% viewport width */
+    width: 45vw; 
+    
+}
+.logoContainer{
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    height: auto;
+    background-color: var(--whiteOpac);
+    align-items: center;
+    top: 18vh;
+    padding: 8px;
+    position: relative;
+}
+.logo{
+    height: 18vh;
+}
+
+.nakamaTitle{
+    font-size: 4rem;
+    text-transform: lowercase;
+}
+.nakamaText{
+    text-transform: uppercase;
+}
+.nakamaTitle, .nakamaText{
+    font-family: designerFont;
+    font-weight: bold;
+}
+
+
+/* register right-side */
+.registerContainer{
+    /* right side div set to 55% viewport width */
+    width: 55vw;
+    background-color: var(--white);
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: left;
+    justify-content: center;
+}
+
+.dummyContainer{
+    font-size: 1.1rem;
+    width: 100%;
+}
+.dummyText{
+    margin: 4% 0 8%;
+}
+
+.padding{
+    padding-left: 2vw;
+    padding-right: 4vw;
+}
+
+.formTitle{
+    font-size: 1.2rem;
+    width: 100%;
+    text-decoration: underline;
+}
+
+form{
+    & .formDiv{
+        display: flex;
+        flex-flow: row wrap;
+        padding-bottom: 8px;
+        & .register{
+            display: flex;
+            flex-flow: column wrap;
+            width: 50%;
+            padding-top: 18px;
+            padding-bottom: 14px;
+            & input{
+                width: 100%;
+                border-radius: 4px;
+                font-size: 1.1rem;
+                display: block;
+                padding: 4px 0;
+                background-color: var(--white);
+                &:invalid{
+                    border: 2px solid var(--whiteTransparent);
+                    border-bottom: 2px solid var(--orange);
+                }
+                &:valid{
+                    border: 2px solid var(--whiteTransparent);
+                    border-bottom: 2px solid var(--yellow);
+                }
+                &:focus, :focus-visible{
+                    outline: none;
+                }
+            }
+        }
+    }
+    & .regButton{
+        margin-top: 44px;
+        margin-bottom: 8px;
+        display: flex;
+        flex-flow: row nowrap;
+        align-items: end;
+        justify-content: space-between;
+        & button{
+            background-color: var(--whiteTransparent);
+            padding: 14px 28px;
+            font-size: 1.8rem;
+            font-weight: bold;
+            border-radius: 8px;
+            border: none;
+        }
+        & p{
+            font-size: 1.2rem;
+            & a{
+                text-decoration: none;
+                color: var(--orange);
+                font-weight: bold;
+                &:hover{
+                    color: var(--yellow);
+                }
+            }
+        }
+    }
+
+    &:invalid{
+        & .formDiv{
+            box-shadow: 0 4px 8px -4px var(--orange);
+        }
+        & button{
+            background-color: var(--orange);
+            &:hover{
+                color: var(--white);
+            }
+        }
+    }
+    &:valid{
+        & .formDiv{
+            box-shadow: 0 4px 8px -4px var(--yellow);
+        }
+        & button{
+            background-color: var(--yellow);
+            &:hover{
+                color: var(--white);
+                cursor: pointer;
+        }
+        }
+    }
+}
